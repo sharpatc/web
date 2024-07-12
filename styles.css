@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400&display=swap');
+
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+.container {
+    position: relative;
+}
+
+.envelope {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 1s, opacity 1s;
+    cursor: pointer;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background: url('https://image.shutterstock.com/image-vector/love-heart-icon-symbol-valentines-260nw-1191427787.jpg') no-repeat center/cover;
+    animation: beat 1.5s infinite;
+}
+
+.letter-content {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100vh);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+
+.envelope.open .letter-content {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.envelope.open .heart {
+    display: none;
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    color: #ff6f91;
+    margin-bottom: 20px;
+}
+
+.letter {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-size: 1.5em;
+    font-family: 'Lobster', cursive;
+    color: #ff6f91;
+    margin-top: 20px;
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
